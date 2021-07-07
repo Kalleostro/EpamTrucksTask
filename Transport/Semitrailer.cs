@@ -2,7 +2,8 @@
 
 namespace Transport
 {
-    public class Class1
+    public abstract class Semitrailer
     {
+        
     }
 }
