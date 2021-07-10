@@ -3,9 +3,18 @@ namespace Transport
     public abstract class Truck
     {
         public float Consumption;
-        public static int MaxLoadWeight;
-        public Semitrailer Semitrailer;
-        public abstract void AddTrailer(Semitrailer trailer);
-        public abstract void RemoveTrailer(Semitrailer trailer);
+        public static int MaxLoadWeight { get; set; }
+        public Semitrailer Semitrailer = null;
+        protected float ConsumptionIndex;
+
+        public void AddTrailer(Semitrailer trailer)
+        {
+            Semitrailer = trailer;
+            Consumption = Semitrailer.CurrentLoadWeight * ConsumptionIndex;
+        }
+        public void RemoveTrailer(Semitrailer trailer)
+        {
+            Semitrailer = null;
+        }
     }
 }

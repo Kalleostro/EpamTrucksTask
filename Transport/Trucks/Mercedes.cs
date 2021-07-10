@@ -4,7 +4,8 @@ namespace Transport.Trucks
     {
         public Mercedes()
         {
-            Consumption = Semitrailer.CurrentLoadWeight * 0.03f;
+            ConsumptionIndex = 0.03f;
+            Semitrailer = null;
         }
         
     }

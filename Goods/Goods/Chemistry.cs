@@ -1,6 +1,6 @@
 namespace Goods.Goods
 {
-    public class Chemistry
+    public class Chemistry:Cargo
     {
         
     }

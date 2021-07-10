@@ -4,7 +4,8 @@ namespace Transport.Trucks
     {
         public Volvo()
         {
-            Consumption = Semitrailer.CurrentLoadWeight * 0.025f;
+            ConsumptionIndex = 0.025f;
+            Semitrailer = null;
         }
     }
 }

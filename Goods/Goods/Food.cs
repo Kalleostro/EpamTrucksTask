@@ -1,7 +1,7 @@
 namespace Goods.Goods
 {
-    public class Food
+    public class Food:Cargo
     {
-        
+        public int Temperature { get; set; }
     }
 }

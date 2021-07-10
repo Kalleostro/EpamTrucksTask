@@ -6,6 +6,7 @@ namespace Transport.Semitrailers
         {
             MaxLoadWeight = 1700;
             CurrentLoadWeight = 200;
+            Cargo = null;
         }
     }
 }
