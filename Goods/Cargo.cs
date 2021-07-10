@@ -4,6 +4,6 @@ namespace Goods
 {
     public abstract class Cargo
     {
-        public int Weight;
+        public int Weight { get; set; }
     }
 }

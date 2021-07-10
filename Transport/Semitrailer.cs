@@ -5,20 +5,24 @@ namespace Transport
 {
     public abstract class Semitrailer
     {
-        public static int MaxLoadWeight;
+        public int MaxLoadWeight;
         public int CurrentLoadWeight;
-        public Cargo Cargo;
+        public Cargo Cargo = null;
 
-        public void LoadTrailer(int weight, Cargo goods)
+        public virtual void LoadTrailer(int weight, Cargo goods)
         {
-            if (MaxLoadWeight >= CurrentLoadWeight + weight)
+            if (MaxLoadWeight >= CurrentLoadWeight + weight && Cargo is null)
             {
                 Cargo = goods;
                 CurrentLoadWeight += weight;
             }
-            else throw new Exception("Not enough space in the trailer!");
+            else if (MaxLoadWeight >= CurrentLoadWeight + weight && Cargo.Equals(goods))
+            {
+                CurrentLoadWeight += weight;
+            }
+            else throw new Exception("Not enough space in the trailer or wrong cargo type!");
         }
-
+        
         public void UnloadTrailer(int weight, Cargo goods) =>
             CurrentLoadWeight -= CurrentLoadWeight >= weight
                 ? weight
