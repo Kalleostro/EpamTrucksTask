@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 using Goods;
 using Goods.Goods;
 using Transport;
@@ -9,6 +14,7 @@ using Transport.Trucks;
 
 namespace Company
 {
+    [Serializable]
     public class AutoPark
     {
         public static List<Semitrailer> Semitrailers;
@@ -16,9 +22,11 @@ namespace Company
 
         public AutoPark()
         {
+            Semitrailers = new List<Semitrailer>();
+            Trucks = new List<Truck>();
             for (var i = 0; i < 2; i++)
             {
-                Semitrailers.Add(new Refrigerator());
+                //Semitrailers.Add(new Refrigerator());
                 Semitrailers.Add(new Tank());
                 Semitrailers.Add(new Tent());
             }
@@ -30,16 +38,16 @@ namespace Company
             Semitrailers[0].LoadTrailer(300, new Fuel(FuelTypes.DT));
         }
 
-        public static List<Truck> GetTrucks()
+        public  List<Truck> GetTrucks()
         {
             return Trucks;
         }
-        public static List<Semitrailer> GetTrailers()
+        public  List<Semitrailer> GetTrailers()
         {
             return Semitrailers;
         }
 
-        public static List<T> GetTrailerByType<T>()
+        public  List<T> GetTrailerByType<T>()
             where T : Semitrailer
         {
             var trailersByType = new List<T>();
@@ -49,14 +57,14 @@ namespace Company
             return trailersByType;
         }
 
-        public static List<T> GetTrailerByPattern<T>(int maxLoadWeight) 
+        public  List<T> GetTrailerByPattern<T>(int maxLoadWeight) 
             where T : Semitrailer
         {
             var trailersByPattern = GetTrailerByType<T>();
             return trailersByPattern.FindAll(x => x.MaxLoadWeight == maxLoadWeight);
         }
 
-        public static List<Truck> GetCombinedTrucks<T>()
+        public  List<Truck> GetCombinedTrucks<T>()
         {
             var combinedTrucks = new List<Truck>();
             foreach(var truck in Trucks)
@@ -64,7 +72,7 @@ namespace Company
                     combinedTrucks.Add(truck);
             return combinedTrucks;  
         }
-        public static List<Truck> GetFreeCombinedTrucks<T>()
+        public List<Truck> GetFreeCombinedTrucks<T>()
         {
             var freeCombinedTrucks = new List<Truck>();
             foreach(var truck in Trucks)
@@ -72,7 +80,7 @@ namespace Company
                     freeCombinedTrucks.Add(truck);
             return freeCombinedTrucks;  
         }
-        public static List<Truck> GetFullFreeCombinedTrucks<T>()
+        public  List<Truck> GetFullFreeCombinedTrucks<T>()
         {
             var fullFreeCombinedTrucks = new List<Truck>();
             foreach(var truck in Trucks)
@@ -81,5 +89,16 @@ namespace Company
             return fullFreeCombinedTrucks;
         }
         
+        // public void ReaderXml()
+        // {
+        //     string path = "";
+        //     var contents = "";
+        //     XmlDocument doc = new XmlDocument();
+        //     using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
+        //     {
+        //         contents = streamReader.ReadToEnd();
+        //     }
+        //     doc.LoadXml(contents);   
+        // }
     }
 }

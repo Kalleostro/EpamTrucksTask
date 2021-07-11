@@ -1,3 +1,4 @@
+using Company;
 using NUnit.Framework;
 
 namespace CompanyTests
@@ -12,7 +13,10 @@ namespace CompanyTests
         [Test]
         public void Test1()
         {
-            Assert.Pass();
+            AutoPark park = new AutoPark();
+            Serializer serializer = new Serializer();
+            serializer.WriteXML();
+            Assert.True(park is not null);
         }
     }
 }

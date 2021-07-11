@@ -3,21 +3,24 @@ using Goods;
 
 namespace Transport
 {
+    [Serializable]
     public abstract class Semitrailer
     {
         public int MaxLoadWeight;
         public int CurrentLoadWeight;
-        public Cargo Cargo = null;
+        public Cargo Cargo;
 
         public virtual void LoadTrailer(int weight, Cargo goods)
         {
             if (MaxLoadWeight >= CurrentLoadWeight + weight && Cargo is null)
             {
                 Cargo = goods;
+                Cargo.Weight += weight;
                 CurrentLoadWeight += weight;
             }
             else if (MaxLoadWeight >= CurrentLoadWeight + weight && Cargo.Equals(goods))
             {
+                Cargo.Weight += weight;
                 CurrentLoadWeight += weight;
             }
             else throw new Exception("Not enough space in the trailer or wrong cargo type!");

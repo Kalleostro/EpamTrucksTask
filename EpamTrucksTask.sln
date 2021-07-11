@@ -6,7 +6,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company", "Company\Company.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Goods", "Goods\Goods.csproj", "{0BE63863-72A3-4FED-8F58-58F3EAB037F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTests", "CompanyTests\CompanyTests.csproj", "{CCDB178B-1761-4C08-991E-B17BC3367855}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyTests", "CompanyTests\CompanyTests.csproj", "{0EA3E1A9-CF20-47F0-A181-E7B7D63A59BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,9 +26,9 @@ Global
 		{0BE63863-72A3-4FED-8F58-58F3EAB037F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BE63863-72A3-4FED-8F58-58F3EAB037F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BE63863-72A3-4FED-8F58-58F3EAB037F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCDB178B-1761-4C08-991E-B17BC3367855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCDB178B-1761-4C08-991E-B17BC3367855}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCDB178B-1761-4C08-991E-B17BC3367855}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCDB178B-1761-4C08-991E-B17BC3367855}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EA3E1A9-CF20-47F0-A181-E7B7D63A59BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EA3E1A9-CF20-47F0-A181-E7B7D63A59BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EA3E1A9-CF20-47F0-A181-E7B7D63A59BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EA3E1A9-CF20-47F0-A181-E7B7D63A59BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

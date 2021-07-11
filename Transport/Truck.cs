@@ -2,11 +2,12 @@ using System;
 
 namespace Transport
 {
+    [Serializable]
     public abstract class Truck
     {
         public float Consumption;
         public static int MaxLoadWeight { get; set; }
-        public Semitrailer Semitrailer = null;
+        public Semitrailer Semitrailer;
         protected float ConsumptionIndex;
         public void AddTrailer(Semitrailer trailer)
         {
@@ -22,8 +23,11 @@ namespace Transport
         public void UpdateComsuption()
         {
             if (Semitrailer is not null)
-                Consumption = Semitrailer.CurrentLoadWeight * ConsumptionIndex;
+            {
+                Consumption = Semitrailer.CurrentLoadWeight * ConsumptionIndex + ConsumptionIndex * 1000;
+            }
             else Consumption = ConsumptionIndex * 1000;
         }
+        
     }
 }
