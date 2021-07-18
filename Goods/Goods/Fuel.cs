@@ -4,9 +4,9 @@ namespace Goods.Goods
     {
         public FuelTypes FuelType { get; set; }
 
-        public Fuel(FuelTypes fuelType)
+        public Fuel()
         {
-            FuelType = fuelType;
+
         }
     }
 }

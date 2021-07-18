@@ -1,4 +1,6 @@
+using System;
 using Company;
+using Goods.Goods;
 using NUnit.Framework;
 
 namespace CompanyTests
@@ -14,9 +16,10 @@ namespace CompanyTests
         public void Test1()
         {
             AutoPark park = new AutoPark();
-            Serializer serializer = new Serializer();
-            serializer.WriteXML();
-            Assert.True(park is not null);
+            //park.GetCombinedTrucks<Fuel>();
+            StreamReaderSerializer.WriteXml(park);
+            //park = Serializer.ReadXml();
+            Assert.True(true);
         }
     }
 }

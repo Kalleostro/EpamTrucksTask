@@ -1,7 +1,14 @@
 using System;
+using System.Xml.Serialization;
+using Transport.Semitrailers;
+using Transport.Trucks;
 
 namespace Transport
 {
+    [XmlInclude(typeof(Man))]
+    [XmlInclude(typeof(Mercedes))]
+    [XmlInclude(typeof(Renault))]
+    [XmlInclude(typeof(Volvo))]
     [Serializable]
     public abstract class Truck
     {

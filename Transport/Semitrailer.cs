@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Xml.Serialization;
 using Goods;
+using Transport.Semitrailers;
 
 namespace Transport
 {
+    [XmlInclude(typeof(Tank))]
+    [XmlInclude(typeof(Tent))]
+    [XmlInclude(typeof(Refrigerator))]
     [Serializable]
     public abstract class Semitrailer
     {

@@ -17,8 +17,8 @@ namespace Company
     [Serializable]
     public class AutoPark
     {
-        public static List<Semitrailer> Semitrailers;
-        public static List<Truck> Trucks;
+        public  List<Semitrailer> Semitrailers;
+        public  List<Truck> Trucks;
 
         public AutoPark()
         {
@@ -26,7 +26,6 @@ namespace Company
             Trucks = new List<Truck>();
             for (var i = 0; i < 2; i++)
             {
-                //Semitrailers.Add(new Refrigerator());
                 Semitrailers.Add(new Tank());
                 Semitrailers.Add(new Tent());
             }
@@ -35,7 +34,7 @@ namespace Company
             Trucks.Add(new Renault());
             Trucks.Add(new Volvo());
             Trucks[1].AddTrailer(Semitrailers[0]);
-            Semitrailers[0].LoadTrailer(300, new Fuel(FuelTypes.DT));
+            Semitrailers[0].LoadTrailer(300, new Fuel());
         }
 
         public  List<Truck> GetTrucks()
@@ -88,17 +87,5 @@ namespace Company
                     fullFreeCombinedTrucks.Add(truck);
             return fullFreeCombinedTrucks;
         }
-        
-        // public void ReaderXml()
-        // {
-        //     string path = "";
-        //     var contents = "";
-        //     XmlDocument doc = new XmlDocument();
-        //     using (StreamReader streamReader = new StreamReader(path, Encoding.UTF8))
-        //     {
-        //         contents = streamReader.ReadToEnd();
-        //     }
-        //     doc.LoadXml(contents);   
-        // }
     }
 }

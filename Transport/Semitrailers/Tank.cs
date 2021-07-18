@@ -1,5 +1,9 @@
+using System;
+using System.Xml.Serialization;
+
 namespace Transport.Semitrailers
 {
+    [SoapInclude(typeof(Semitrailer))]
     public class Tank:Semitrailer
     {
         public Tank()

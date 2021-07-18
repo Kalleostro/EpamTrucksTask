@@ -1,18 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
+        <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Goods\Goods.csproj" />
+      <ProjectReference Include="..\Company\Company.csproj" />
       <ProjectReference Include="..\Transport\Transport.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="..\CompanyTests\bin\Debug\net5.0\park.xml">
-        <Link>park.xml</Link>
-      </Content>
     </ItemGroup>
 
 </Project>
